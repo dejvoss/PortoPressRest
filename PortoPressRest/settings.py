@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "portfolio.apps.PortfolioConfig"
+    'portfolio.apps.PortfolioConfig',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -52,6 +53,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'PortoPressRest.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly',
+    ]
+}
 
 TEMPLATES = [
     {
